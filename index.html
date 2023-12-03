@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" href="./style.css"></link>
+<link rel="icon" href="./assets/logos/amt.png"></link>
+<title>Amt music</title>
+</head>
+<body>
+<div id="loader">
+<div><img src="./assets/logos/logo.png"></img>beta</div>
+<p></p>chargement en cours
+</div>
+<header>
+<img id="logo" src="./assets/logos/logo.png"></img>
+<img class="item accountbutton" src="./assets/images/account.png" onclick="lecteur('themeset');"></img>
+</header>
+<audio id="audio" src="https://drive.google.com/uc?id=18H32P1JM69YDdHm-CcGs_6xqN_n71NwR"></audio>
+<container>
+<trackitem>
+<img class="trackplayer playbutton" src="./assets/images/play.png" onclick="player('play');"></img>
+<div class="musicanimation">
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3"></div>
+<div class="box box4"></div>
+</div>
+<div class="left">
+<img id="pochette" src="./assets/images/track.png"></img>
+<div id="tracktitle">Le temps de l'ombre
+<alinea></alinea>
+KSZ
+</div>
+</div>
+<div  class="right">
+<img class="dotset" src="./assets/images/settings.png">
+</div>
+</trackitem>
+</container>
+<lecteur>
+<div class="buttonactiveplayer" onclick="playerExtand();"></div>
+<div class="middle">
+<img id="pochette" src="./assets/images/track.png">
+<div id="tracktitle">Le temps de l'ombre
+<alinea></alinea>
+KSZ
+</div>
+</div>
+<div class="playerbuttoncontainer">
+<img class="playerbutton playbutton" src="./assets/images/play.png" onclick="player('play');"></img>
+<img class="playerbutton pausebutton" src="./assets/images/pause.png" onclick="player('pause');"></img>
+<img class="playerbutton repeatbutton" src="./assets/images/repeat.png" onclick="player('loop');"></img>
+</div>
+
+<div class="progress-container">
+<div id="progressbarslide"></div>
+      <input type="range" id="progressInput" class="progress-bar" value="0"></input>
+    </div>
+<div id="themeset">
+<img class="backbutton" src="./assets/images/back.png" onclick="back();"></img>
+<div class="itemset" onclick="theme('dark');">
+<img class="buttonradio dark" src="./assets/images/radio-checked.png"></img>
+thème sombre
+</div>
+<div class="itemset" onclick="theme('light');">
+<img class="buttonradio light" src="./assets/images/radio-unchecked.png"></img>
+thème clair
+</div>
+</div>
+</lecteur>
+<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
