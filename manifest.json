@@ -1,7 +1,7 @@
 {
     "name": "AMT music",
     "short_name": "AMT music",
-    "start_url": "/",
+    "start_url": "/AMTmusic",
     "display": "fullscreen",
     "orientation": "portrait",
     "icons": [
