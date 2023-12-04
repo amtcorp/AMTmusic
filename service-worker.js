@@ -7,7 +7,7 @@ self.addEventListener('install', function(event) {
         '/', // Mettez ici les URL des ressources à mettre en cache
         './index.html',
         './style.css',
-        '/scripts.js'
+        './scripts.js'
         // Ajoutez ici d'autres ressources statiques à mettre en cache
       ]);
     })
