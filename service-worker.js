@@ -4,10 +4,9 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('app-cache').then(function(cache) {
       return cache.addAll([
-        '/', // Mettez ici les URL des ressources à mettre en cache
-        './index.html',
-        './style.css',
-        './scripts.js',
+        'https://amtcorp.github.io/AMTmusic/index.html',
+        'https://amtcorp.github.io/AMTmusic/style.css',
+        'https://amtcorp.github.io/AMTmusic/script.js',
         // Ajoutez ici d'autres ressources statiques à mettre en cache
       ]);
     })
