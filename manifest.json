@@ -1,0 +1,13 @@
+{
+  "name": "AMT music",
+  "short_name": "AMT music",
+  "start_url": "/",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "./assets/logos/amt.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+  ]
+}
