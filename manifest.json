@@ -1,7 +1,7 @@
 {
     "name": "AMT music",
     "short_name": "AMT music",
-    "start_url": "/AMTmusic",
+    "start_url": "https://amtcorp.github.io/AMTmusic/index.html",
     "display": "fullscreen",
     "orientation": "portrait",
     "icons": [
