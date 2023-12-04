@@ -129,7 +129,9 @@ display: flex;
     /* padding-right: 5px; */
     padding-bottom: 20px;
 }
-
+body.mobile #loader img {
+    width: 60%;
+}
 /* style pour iphone ipad et ipod */
 body.ios header {
     height: auto;
@@ -175,7 +177,9 @@ display: flex;
     /* padding-right: 5px; */
     padding-bottom: 20px;
 }
-
+body.ios #loader img {
+    width: 60%;
+}
 #loader {
     position: absolute;
     z-index: 1;
