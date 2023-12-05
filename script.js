@@ -124,6 +124,15 @@ function player(stat) {
   const audio = document.getElementById('audio');
   const loopbutton = document.querySelector('.repeatbutton')
 
+	        var title = "Le temps de l'ombre";
+        var artist = "KSZ";
+        var posterURL = "./assets/images/track.png";
+        
+        // Attribution des valeurs aux attributs de l'élément audio
+        audioElement.setAttribute('title', title);
+        audioElement.setAttribute('artist', artist);
+        audioElement.setAttribute('poster', posterURL);
+
 
    const actions = {
     'play': () => {
