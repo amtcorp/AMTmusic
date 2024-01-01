@@ -1,6 +1,5 @@
 window.onload = function(){loader.style.display="none";document.body.classList.add('disable-transition');setTimeout(transition(),4000); }
 
-
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js')
     .then(function(registration) {
@@ -43,7 +42,8 @@ document.body.classList.add('mobile');  // Charger le fichier CSS spécifique po
 // Charger un fichier CSS par défaut pour les ordinateurs de bureau
 
   }
-
+const devicecomp = document.querySelector('#devicecomp');
+devicecomp.innerHTML = deviceType;
 };
 
 theme();
@@ -216,6 +216,7 @@ const progressbarslide = document.getElementById('progressbarslide');
 
    const actions = {
     'active': () => {
+      backbutton.classList.remove('active');
       pochette.classList.remove('reduit');
       lecteur.classList.remove('reduit');
       lecteur.classList.add('active');
@@ -234,6 +235,7 @@ reduire = setTimeout(function() {
 }, 5000);
     },
     'reduce': () => {
+      backbutton.classList.remove('active');
      lecteur.classList.remove('active');
      buttons.classList.remove('active');
      lecteur.classList.add('reduit');
@@ -249,6 +251,7 @@ reduire = setTimeout(function() {
       // Si vous souhaitez retirer la classe 'active' lors de la pause, vous pouvez le faire ici
     },
     'unactive': () => {
+      backbutton.classList.remove('active');
      lecteur.classList.remove('active');
      buttons.classList.remove('active');
      lecteur.classList.remove('reduit');
@@ -264,7 +267,7 @@ reduire = setTimeout(function() {
       // Si vous souhaitez retirer la classe 'active' lors de la pause, vous pouvez le faire ici
    },
     'pause': () => {
-
+      backbutton.classList.remove('active');
      lecteur.classList.add('active');
      buttons.classList.add('active');
      lecteur.classList.remove('reduit');
@@ -300,6 +303,38 @@ lecteurstyle('reduce')
       buttonactiveplayer.classList.remove('active');
       backbutton.classList.add('active');
     },
+
+    'settings': () => {
+      pochette.classList.remove('reduit');
+      lecteur.classList.remove('reduit');
+      lecteur.classList.add('active');
+      buttons.classList.remove('active');
+      playbutton.classList.remove('active');
+      pausebutton.classList.remove('active');
+      progresscontainer.classList.remove('active');
+      middle.classList.remove('reduit');
+      middle.classList.remove('active');
+      tracktitle.classList.remove('reduit');
+      tracktitle.classList.remove('active');
+      buttonactiveplayer.classList.remove('active');
+      backbutton.classList.add('active');
+    },
+
+    'compatibility': () => {
+      pochette.classList.remove('reduit');
+      lecteur.classList.remove('reduit');
+      lecteur.classList.add('active');
+      buttons.classList.remove('active');
+      playbutton.classList.remove('active');
+      pausebutton.classList.remove('active');
+      progresscontainer.classList.remove('active');
+      middle.classList.remove('reduit');
+      middle.classList.remove('active');
+      tracktitle.classList.remove('reduit');
+      tracktitle.classList.remove('active');
+      buttonactiveplayer.classList.remove('active');
+      backbutton.classList.add('active');
+    },
     // Ajoutez d'autres actions si nÃ©cessaire
 
   };
@@ -316,6 +351,22 @@ const themesettings = document.querySelector('lecteur #themeset')
   } else {
 const themesettings = document.querySelector('lecteur #themeset')
     themesettings.classList.remove('active');
+  }
+
+ if (statut === 'settings') {
+const settings = document.querySelector('lecteur #settings')
+    settings.classList.add('active');
+  } else {
+const settings = document.querySelector('lecteur #settings')
+    settings.classList.remove('active');
+  }
+
+if (statut === 'compatibility') {
+const settings = document.querySelector('lecteur #compatibility')
+    settings.classList.add('active');
+  } else {
+const settings = document.querySelector('lecteur #compatibility')
+    settings.classList.remove('active');
   }
 
 }
