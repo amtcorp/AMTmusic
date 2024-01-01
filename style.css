@@ -1,0 +1,614 @@
+:root {
+
+/* Thème sombre */
+--background-default : #0e0e0e;
+--accent-default : #2d2d2de0;
+--text-default : white;
+--animation-default : white;
+
+ /* Thème clair */
+
+--background-light : #c1c3cb;
+--accent-light : #ffffffe0;
+--text-light : black;
+--animation-light : #2980b9;
+}
+
+* {
+    /* border: 1px red solid; */
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    
+}
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 8px;
+}
+
+alinea {
+    padding: 10px 0 0 0;
+    margin-block: 0;
+    display: flex;
+}
+
+body {
+margin : 0px;
+overflow:hidden;
+}
+
+/* Styles pour le thème sombre */
+body.dark-theme {
+  background : var(--background-default);
+  color: var(--text-default);
+}
+body.dark-theme header,
+body.dark-theme trackitem,
+body.dark-theme lecteur {
+  background : var(--accent-default);
+  color: var(--text-default);
+}
+
+body.dark-theme .box {
+  background : var(--animation-default);
+}
+
+/* Styles pour le thème clair */
+body.light-theme {
+  background : var(--background-light);
+  color: var(--text-light);
+}
+body.light-theme header,
+body.light-theme trackitem,
+ body.light-theme lecteur {
+  background : var(--accent-light);
+  color: var(--text-light);
+}
+
+body.light-theme .box {
+  background : var(--animation-light);
+}
+
+.transition-effect {
+  transition: all 0.5s ease; /* Modifiez les propriétés de transition selon vos besoins */
+}
+
+.disable-transition {
+  transition: none !important;
+}
+
+/* style pour mobile */
+body.mobile header {
+    height: auto;
+}
+
+body.mobile trackitem {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    flex-direction: row;
+    font-weight: bold;
+    font-family: Arial;
+}
+body.mobile trackitem .left {
+
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+body.mobile trackitem .left {
+
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 250%;
+    height: 100%;
+    margin-left: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 16px;
+}
+body.mobile lecteur.active{
+width: 95%;
+}
+body.mobile .musicanimation.active{
+display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 80px;
+    height: 30px;
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+    padding-bottom: 20px;
+}
+body.mobile #loader img {
+    width: 60%;
+}
+
+/* style pour iphone ipad et ipod */
+body.ios header {
+    height: auto;
+}
+
+body.ios trackitem {
+    height: auto;
+}
+
+body.ios trackitem {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    flex-direction: row;
+    font-weight: bold;
+    font-family: Arial;
+}
+body.ios trackitem .left {
+
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 250%;
+    height: 100%;
+    margin-left: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 16px;
+}
+body.ios lecteur.active{
+width: 95%;
+}
+
+body.ios .musicanimation.active{
+display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 80px;
+    height: 30px;
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+    padding-bottom: 20px;
+}
+
+body.ios #loader img {
+    width: 60%;
+}
+
+#loader {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    background: #2d2d2de0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    height: 60px;
+}
+
+header .item {
+    width: 50px;
+}
+
+
+container {
+    width: -webkit-fill-available;
+    display: flex;
+    position: absolute;
+    padding: 10px;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+trackitem {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    background: #2d2d2de0;
+    height: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    flex-direction: row;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+trackitem .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    margin-left: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.trackplayer {
+    width: 30px;
+}
+
+@keyframes musicAnimation {
+  0% {
+    height: calc(60% + 70% * var(--random))
+  }
+  50% {
+    height: calc(20% + 90% * var(--random));
+  }
+  100%{
+   height: 50%;
+}
+}
+
+.musicanimation {
+  display: none;
+}
+
+.box {
+  width: 20%;
+  height: 100%;
+  transition: height 0.25s ease-in-out;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: white;
+  animation: musicAnimation 0.55s infinite;
+  animation-play-state: paused; /* Pause l'animation par défaut */
+}
+
+.musicanimation.active {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 20px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+}
+
+.musicanimation.animated .box{
+  animation-play-state: running;
+}
+/* Ajoutez des classes spécifiques pour chaque boîte si nécessaire */
+.box1 { --random: -0.8; }
+.box2 { --random: -0.6 }
+.box3 { --random: -0.4; }
+.box4 { --random: -0.1; }
+
+
+trackitem #pochette {
+    width: 70px;
+}
+
+#tracktitle {
+    margin-left: 10px;
+}
+
+
+trackitem .right {
+ display: flex;
+    width: 70%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    float: right;
+}
+
+trackitem .dotset {
+
+    display: flex;
+    width: 60px;
+    height: 60px;
+
+}
+
+lecteur {
+    border-radius: 20px;
+    background: #2d2d2de0;
+    bottom: 5px;
+    position: fixed;
+    width: 100px;
+    height: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+
+lecteur.active {
+    border-radius: 20px;
+    background: #2d2d2de0;
+    bottom: 5px;
+    position: fixed;
+    width: 30%;
+    height: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.playerbuttoncontainer {
+    display:none;
+}
+
+
+.playerbuttoncontainer.active {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    animation: deplacement-texte 1.5s ease-in-out;
+    position: absolute;
+}
+
+
+lecteur #pochette {
+    height: 50px;
+}
+
+.playerbutton {
+    display:flex;
+    width: 40px;
+}
+
+.playerbutton.remove {
+display:none;
+}
+
+.repeatbutton{
+margin-right: 10px;
+}
+
+.repeatbutton.active {
+    background: #2980b9;
+    border-radius: 40%;
+    padding: 5px;
+    margin-right: 10px;
+}
+.pausebutton{
+display : none;
+}
+
+.pausebutton.active{
+display : flex;
+}
+
+lecteur .middle {
+    display: none;
+}
+
+
+
+
+lecteur .playbutton{
+display : none;
+}
+
+lecteur .playbutton.active{
+display : flex;
+margin-left: 8px;
+}
+
+
+.buttonactiveplayer{
+    display: none;
+}
+
+.buttonactiveplayer.active{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    background: transparent;
+}
+
+@keyframes deplacement-texte {
+  0% { transform: translateY(0); opacity: 0; }
+  100% { transform: translateY(0px); opacity: 1; }
+}
+
+lecteur .middle.reduit {
+    display: flex;
+}
+
+lecteur .middle.active {
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    font-family: arial;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    animation: deplacement-texte 1.5s ease-in-out;
+}
+
+lecteur #pochette.reduit {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    position: absolute;
+    transform: translate(0%, -50%);
+    padding: 8px;
+    border-radius: 50px;
+}
+
+lecteur #tracktitle.reduit {
+    display: none;
+}
+
+lecteur.reduit {
+    width: 200px;
+}
+
+.playbutton.remove {
+display:none;
+}
+
+.progress-container {
+display:none;
+}
+
+
+.progress-container.active {
+    width: 90%;
+    height: 10px;
+    background-color: #ccc;
+    position: absolute;
+    bottom: 5;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    border-radius: 5px;
+    display:flex;
+}
+
+#progressbarslide {
+    left: 0px;
+    position: absolute;
+    background: #2980b9;
+    height: 100%;
+    cursor: pointer;
+    transform: translate(0px, 0px);
+    border-radius: 5px;
+    display: flex;
+}
+
+#themeset {
+display:none;
+}
+
+#themeset.active {
+display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+
+.itemset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: context-menu;
+}
+
+.buttonradio{
+width : 20px;
+height : 20px;
+}
+
+.backbutton {
+display: none;
+}
+
+.backbutton.active {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    display: flex;
+}
+
+#settings {
+    display: none;
+}
+
+ #settings.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+#compatibility {
+    display: none;
+}
+
+#compatibility.active {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+
+  background-color: #00000000;
+  outline: none;
+transform: translate(-0px, -2px);
+cursor: pointer;
+}
+
+/* Style du point de contrôle pour les navigateurs WebKit (Chrome, Safari, Opera) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px; /* Ajustez la taille du point de contrôle */
+  height: 100%; /* Ajustez la taille du point de contrôle */
+  border-radius: 0%; 
+  background-color: #2980b900;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+transform: translate(-3px, -0px);
+}
+
