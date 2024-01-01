@@ -1,7 +1,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="manifest" href="./manifest.json"></link>
 <link rel="stylesheet" href="./style.css"></link>
 <link rel="icon" href="./assets/logos/amt.png"></link>
 <title>Amt music</title>
@@ -13,9 +12,9 @@
 </div>
 <header>
 <img id="logo" src="./assets/logos/logo.png"></img>
-<img class="item accountbutton" src="./assets/images/account.png" onclick="lecteur('themeset');"></img>
+<img class="item accountbutton" src="./assets/images/account.png" onclick="lecteur('settings');"></img>
 </header>
-<audio id="audio" src="https://drive.google.com/uc?id=18H32P1JM69YDdHm-CcGs_6xqN_n71NwR"></audio>
+<audio id="audio" src="https://drive.google.com/uc?id=18H32P1JM69YDdHm-CcGs_6xqN_n71NwR" title="Le temps de l'ombre" artist="KSZ" poster="./assets/images/track.png"></audio>
 <container>
 <trackitem>
 <img class="trackplayer playbutton" src="./assets/images/play.png" onclick="player('play');"></img>
@@ -56,8 +55,26 @@ KSZ
 <div id="progressbarslide"></div>
       <input type="range" id="progressInput" class="progress-bar" value="0"></input>
     </div>
-<div id="themeset">
 <img class="backbutton" src="./assets/images/back.png" onclick="back();"></img>
+<div id="settings">
+
+<div id="item">
+<img class="" src=""></img>
+Compte
+</div>
+
+<div id="item" onclick="lecteur('themeset');">
+<img class="" src=""></img>
+thème
+</div>
+<div id="item" onclick="lecteur('compatibility');">
+<img class="" src=""></img>
+compatibilté
+</div>
+
+</div>
+<div id="themeset">
+
 <div class="itemset" onclick="theme('dark');">
 <img class="buttonradio dark" src="./assets/images/radio-checked.png"></img>
 thème sombre
@@ -65,6 +82,11 @@ thème sombre
 <div class="itemset" onclick="theme('light');">
 <img class="buttonradio light" src="./assets/images/radio-unchecked.png"></img>
 thème clair
+</div>
+</div>
+<div id="compatibility">
+<div id="item">
+<span>mode de compatibilité pour : </span><span id="devicecomp">Unknown Device</span>
 </div>
 </div>
 </lecteur>
